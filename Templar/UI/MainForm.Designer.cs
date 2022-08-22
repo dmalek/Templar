@@ -33,17 +33,18 @@ namespace Templar.UI
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.solutionExplorer1 = new Templar.UI.Controls.SolutionExplorer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.projectProperties1 = new Templar.UI.Controls.ProjectProperties();
             this.MainPages = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.projectProperties1 = new Templar.UI.Controls.ProjectProperties();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -67,9 +68,10 @@ namespace Templar.UI
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
+            this.toolStripButton5,
+            this.toolStripSeparator1,
             this.toolStripButton2,
-            this.toolStripButton1,
-            this.toolStripButton4});
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(936, 25);
@@ -83,6 +85,19 @@ namespace Templar.UI
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(53, 22);
             this.toolStripButton3.Text = "Load";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::Templar.Properties.Resources.save_16px;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButton5.Text = "Save";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButton2
             // 
@@ -101,16 +116,6 @@ namespace Templar.UI
             this.toolStripButton1.Size = new System.Drawing.Size(103, 22);
             this.toolStripButton1.Text = "Generate code";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Templar.Properties.Resources.installing_updates_16px;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // splitContainer1
             // 
@@ -149,7 +154,7 @@ namespace Templar.UI
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(304, 626);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Explorer";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // solutionExplorer1
@@ -169,8 +174,17 @@ namespace Templar.UI
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(304, 626);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Properties";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // projectProperties1
+            // 
+            this.projectProperties1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectProperties1.Location = new System.Drawing.Point(3, 3);
+            this.projectProperties1.Name = "projectProperties1";
+            this.projectProperties1.ProjectFile = null;
+            this.projectProperties1.Size = new System.Drawing.Size(298, 620);
+            this.projectProperties1.TabIndex = 0;
             // 
             // MainPages
             // 
@@ -191,15 +205,6 @@ namespace Templar.UI
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // projectProperties1
-            // 
-            this.projectProperties1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.projectProperties1.Location = new System.Drawing.Point(3, 3);
-            this.projectProperties1.Name = "projectProperties1";
-            this.projectProperties1.ProjectFile = null;
-            this.projectProperties1.Size = new System.Drawing.Size(298, 620);
-            this.projectProperties1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -242,7 +247,8 @@ namespace Templar.UI
         private ToolStripButton toolStripButton2;
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
         private ProjectProperties projectProperties1;
+        private ToolStripButton toolStripButton5;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

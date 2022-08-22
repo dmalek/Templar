@@ -24,18 +24,6 @@ namespace Templar.UI
             projectProperties1.RefreshContent();
         }
 
-        public void ShowProperties()
-        {
-            TabPage? tabPage = FindMainPage("Project properties");
-            if (tabPage == null)
-            {
-                var nc = new ProjectProperties();
-                nc.ProjectFile = Project.ProjectFile;
-                nc.RefreshContent();
-                AddMainPage((Control)nc, "Project properties", "Project properties");
-            }
-        }
-
         public void ShowTemplate(CodeTemplateModel codeTemplate)
         {
             TabPage? tabPage = FindMainPage(codeTemplate.TemplatePath);
@@ -105,11 +93,6 @@ namespace Templar.UI
                     ((IRefreshableContent)tabPage.Controls[0]).RefreshContent();
                 }
             }
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            ShowProperties();
         }
     }
 }
