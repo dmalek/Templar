@@ -16,6 +16,7 @@ namespace Templar.Aplication.Processes.LoadProject
         {
             var project = new ProjectModel();
             project.ProjectFile.TemplatesFolder = @"D:\Development\NewtonsoftJSON\JSON\JSON";
+            project.ProjectFile.DestinationFolder = @"D:\Tmp";
 
             return project;
         }

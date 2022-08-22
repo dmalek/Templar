@@ -1,4 +1,6 @@
-﻿namespace Templar.UI
+﻿using Templar.UI.Controls;
+
+namespace Templar.UI
 {
     partial class MainForm
     {
@@ -33,13 +35,15 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.solutionExplorer1 = new Templar.UI.SolutionExplorer();
+            this.solutionExplorer1 = new Templar.UI.Controls.SolutionExplorer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.MainPages = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.projectProperties1 = new Templar.UI.Controls.ProjectProperties();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -47,6 +51,7 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.MainPages.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +68,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
             this.toolStripButton2,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(936, 25);
@@ -89,12 +95,22 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = global::Templar.Properties.Resources.save_16px1;
+            this.toolStripButton1.Image = global::Templar.Properties.Resources.registry_editor_16px;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(103, 22);
             this.toolStripButton1.Text = "Generate code";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::Templar.Properties.Resources.installing_updates_16px;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // splitContainer1
             // 
@@ -147,6 +163,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.projectProperties1);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -175,6 +192,15 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // projectProperties1
+            // 
+            this.projectProperties1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectProperties1.Location = new System.Drawing.Point(3, 3);
+            this.projectProperties1.Name = "projectProperties1";
+            this.projectProperties1.ProjectFile = null;
+            this.projectProperties1.Size = new System.Drawing.Size(298, 620);
+            this.projectProperties1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -195,6 +221,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.MainPages.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,5 +242,7 @@
         private ToolStripButton toolStripButton2;
         private ToolStripButton toolStripButton1;
         private ToolStripButton toolStripButton3;
+        private ToolStripButton toolStripButton4;
+        private ProjectProperties projectProperties1;
     }
 }

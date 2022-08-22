@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Templar.Aplication.Models;
 
-namespace Templar.UI
+namespace Templar.UI.Controls
 {
     public partial class CodeEditor : UserControl, IRefreshableContent
     {
@@ -54,10 +54,9 @@ namespace Templar.UI
         public void RefreshContent()
         {
             txtTemplate.Text = _code?.Template;
-            txtTemplate.Select(0, 0);
+
 
             txtCode.Text = _code?.Source;
-            txtCode.Select(0, 0);
 
             toolStripButton1.Enabled = (_code != null);
             splitContainer1.SplitterDistance = (int)(splitContainer1.Width / 2);

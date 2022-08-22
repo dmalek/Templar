@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Templar.Aplication.Commands.GetAllTemplates;
-using Templar.Aplication.Commands.IncludeAllTemplates;
+﻿using System.Windows.Forms;
 using Templar.Aplication.Models;
-using Templar.Aplication.Processes.LoadProject;
-using Templar.Aplication.Processes.PrepareProject;
-using Templar.Extensions;
+using Templar.UI.Controls;
 
 namespace Templar.UI
 {
@@ -31,6 +19,21 @@ namespace Templar.UI
         {
             solutionExplorer1.Project = Project;
             solutionExplorer1.BuildTree();
+
+            projectProperties1.ProjectFile = Project.ProjectFile;
+            projectProperties1.RefreshContent();
+        }
+
+        public void ShowProperties()
+        {
+            TabPage? tabPage = FindMainPage("Project properties");
+            if (tabPage == null)
+            {
+                var nc = new ProjectProperties();
+                nc.ProjectFile = Project.ProjectFile;
+                nc.RefreshContent();
+                AddMainPage((Control)nc, "Project properties", "Project properties");
+            }
         }
 
         public void ShowTemplate(CodeTemplateModel codeTemplate)
@@ -54,7 +57,6 @@ namespace Templar.UI
             {
                 MainPages.SelectedTab = tabPage;
             }
-
         }
 
         private TabPage? FindMainPage(string key)
@@ -73,7 +75,7 @@ namespace Templar.UI
         private TabPage AddMainPage(Control control, string text, string key)
         {
             TabPage newPage = new TabPage();
-            
+
             control.Dock = DockStyle.Fill;
             newPage.Controls.Add(control);
             newPage.Text = text;
@@ -103,6 +105,11 @@ namespace Templar.UI
                     ((IRefreshableContent)tabPage.Controls[0]).RefreshContent();
                 }
             }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            ShowProperties();
         }
     }
 }

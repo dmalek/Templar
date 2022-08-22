@@ -12,9 +12,9 @@ namespace Templar.Aplication.Commands.BuildCode
 
             foreach (var keyword in param.Keywords)
             {
-                sourcePath = sourcePath.Replace(keyword.Key, keyword.Value);
-                sourceFileName = sourceFileName.Replace(keyword.Key, keyword.Value);
-                sourceCode = sourceCode.Replace(keyword.Key, keyword.Value);
+                sourcePath = sourcePath.Replace(keyword.Name, keyword.Value);
+                sourceFileName = sourceFileName.Replace(keyword.Name, keyword.Value);
+                sourceCode = sourceCode.Replace(keyword.Name, keyword.Value);
             }
 
             return new BuildCodeResult()

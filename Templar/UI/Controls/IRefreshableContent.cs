@@ -1,4 +1,4 @@
-﻿namespace Templar.UI
+﻿namespace Templar.UI.Controls
 {
     public interface IRefreshableContent
     {

@@ -4,6 +4,6 @@
     {
         public string TemplatesFolder { get; set; } = String.Empty;
         public string DestinationFolder { get; set; } = String.Empty;
-        public Dictionary<string, string> Keywords { get; set; } = new Dictionary<string, string>();
+        public List<TemplateKeyword> Keywords { get; set; } = new List<TemplateKeyword>();
     }
 }

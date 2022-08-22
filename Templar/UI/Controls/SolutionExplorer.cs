@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Templar.Aplication.Models;
 using Templar.Extensions;
 
-namespace Templar.UI
+namespace Templar.UI.Controls
 {
     public partial class SolutionExplorer : UserControl
     {
