@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Templar.Aplication.Models;
 using Templar.Aplication.Processes.BuildProject;
 using Templar.Aplication.Processes.GenerateCode;
+using Templar.Aplication.Processes.LoadProject;
 using Templar.Aplication.Processes.PrepareProject;
 using Templar.UI;
+using static System.Net.WebRequestMethods;
 
 namespace Templar
 {
@@ -16,6 +19,19 @@ namespace Templar
         public static MainForm MainForm;
 
         public static ProjectModel Project { get; set; } = new ProjectModel();
+
+        public static void LoadProject(string fileName)
+        {
+            Project = new LoadProjectProcess().Execute(fileName);
+            new PrepareProjectProcess().Execute(ApplicationService.Project);
+            MainForm.RefreshContent();
+        }
+
+        public static void SaveProject(string fileName)
+        {
+            var jsonContent = JsonSerializer.Serialize(Project.ProjectFile);
+            System.IO.File.WriteAllText(fileName, jsonContent);
+        }
 
         public static void ShowTemplate(CodeTemplateModel codeTemplate)
         {

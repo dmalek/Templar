@@ -13,17 +13,11 @@ namespace Templar.UI
             MainPages.TabPages.Clear();
         }
 
-        public ProjectModel Project { get; set; } = ApplicationService.Project;
-
         private void MainForm_Load(object sender, EventArgs e)
         {
-            solutionExplorer1.Project = Project;
-            solutionExplorer1.BuildTree();
 
-            projectProperties1.ProjectFile = Project.ProjectFile;
-            projectProperties1.RefreshContent();
         }
-
+        
         public void ShowTemplate(CodeTemplateModel codeTemplate)
         {
             TabPage? tabPage = FindMainPage(codeTemplate.TemplatePath);
@@ -75,7 +69,7 @@ namespace Templar.UI
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
-        {
+        {            
             ApplicationService.BuildProject();
         }
 
@@ -86,6 +80,8 @@ namespace Templar.UI
 
         public void RefreshContent()
         {
+            projectProperties1.RefreshContent();
+
             foreach (TabPage tabPage in MainPages.TabPages)
             {
                 if (tabPage.Controls[0] is IRefreshableContent)
@@ -93,6 +89,28 @@ namespace Templar.UI
                     ((IRefreshableContent)tabPage.Controls[0]).RefreshContent();
                 }
             }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() !=  DialogResult.OK)
+            {
+                return;
+            }
+
+            ApplicationService.LoadProject(openFileDialog1.FileName);
+            RefreshContent();
+            solutionExplorer1.BuildTree();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            ApplicationService.SaveProject(saveFileDialog1.FileName);
         }
     }
 }

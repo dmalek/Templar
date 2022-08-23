@@ -18,11 +18,9 @@ namespace Templar.UI.Controls
             InitializeComponent();
         }
 
-        public ProjectFileModel ProjectFile { get; set; }
-
         public void RefreshContent()
         {
-            propertyGrid1.SelectedObject = ProjectFile;
+            propertyGrid1.SelectedObject = ApplicationService.Project.ProjectFile;
         }
     }
 }

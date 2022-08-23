@@ -19,14 +19,12 @@ namespace Templar.UI.Controls
             InitializeComponent();
         }
 
-        public ProjectModel Project { get; set; }
-
         public void BuildTree()
         {
             tvTemplates.BeginUpdate();
             tvTemplates.Nodes.Clear();
 
-            foreach (var item in Project.CodeTemplates)
+            foreach (var item in ApplicationService.Project.CodeTemplates)
             {
                 TreeNode? node = tvTemplates.Nodes.AddModeWithPath(item.TemplateRelativePath);
                 if (node != null && item.TemplateType == Aplication.Enums.TemplateTypes.Folder)

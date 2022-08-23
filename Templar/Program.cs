@@ -16,9 +16,6 @@ namespace Templar
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            ApplicationService.Project = new LoadProjectProcess().Execute("");
-            new PrepareProjectProcess().Execute(ApplicationService.Project);
-
             ApplicationService.MainForm = new MainForm();
 
             Application.Run(ApplicationService.MainForm);

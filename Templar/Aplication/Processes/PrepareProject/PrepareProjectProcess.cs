@@ -21,8 +21,6 @@ namespace Templar.Aplication.Processes.PrepareProject
                 TemplatesFolder = parameters.ProjectFile.TemplatesFolder
             });
 
-            var projectUri = new Uri(parameters.ProjectFile.TemplatesFolder);
-
             foreach (var item in tl)
             {
                 LoadTemplateResult? template = null;
@@ -38,9 +36,9 @@ namespace Templar.Aplication.Processes.PrepareProject
                     TemplateType = item.TemplateType,
                     TemplatePath = item.TemplateFullPath,
                     Template = template?.Template,
-                    TemplateRelativePath = Uri.UnescapeDataString(projectUri.MakeRelativeUri(templateUri).ToString()).Replace('/', Path.DirectorySeparatorChar),
+                    TemplateRelativePath = Path.GetRelativePath(parameters.ProjectFile.TemplatesFolder, item.TemplateFullPath),
                     TemplateFileName = System.IO.Path.GetFileName(item.TemplateFullPath)
-                });
+                });;
             }
         }
     }

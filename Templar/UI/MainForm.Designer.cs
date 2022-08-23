@@ -45,6 +45,8 @@ namespace Templar.UI
             this.projectProperties1 = new Templar.UI.Controls.ProjectProperties();
             this.MainPages = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -85,6 +87,7 @@ namespace Templar.UI
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(53, 22);
             this.toolStripButton3.Text = "Load";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton5
             // 
@@ -93,6 +96,7 @@ namespace Templar.UI
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(51, 22);
             this.toolStripButton5.Text = "Save";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripSeparator1
             // 
@@ -162,7 +166,6 @@ namespace Templar.UI
             this.solutionExplorer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.solutionExplorer1.Location = new System.Drawing.Point(3, 3);
             this.solutionExplorer1.Name = "solutionExplorer1";
-            this.solutionExplorer1.Project = null;
             this.solutionExplorer1.Size = new System.Drawing.Size(298, 620);
             this.solutionExplorer1.TabIndex = 0;
             // 
@@ -182,7 +185,6 @@ namespace Templar.UI
             this.projectProperties1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.projectProperties1.Location = new System.Drawing.Point(3, 3);
             this.projectProperties1.Name = "projectProperties1";
-            this.projectProperties1.ProjectFile = null;
             this.projectProperties1.Size = new System.Drawing.Size(298, 620);
             this.projectProperties1.TabIndex = 0;
             // 
@@ -205,6 +207,15 @@ namespace Templar.UI
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "templar";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "templar";
             // 
             // MainForm
             // 
@@ -250,5 +261,7 @@ namespace Templar.UI
         private ProjectProperties projectProperties1;
         private ToolStripButton toolStripButton5;
         private ToolStripSeparator toolStripSeparator1;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

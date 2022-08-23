@@ -33,16 +33,24 @@ namespace Templar.Extensions
 
         public static TreeNode? AddModeWithPath(this TreeNodeCollection nodes, string path)
         {
-            string? parentPath = System.IO.Path.GetDirectoryName(path);
-            string templateName = System.IO.Path.GetFileName(path);
-            TreeNode? parentNode = nodes.FindNode(parentPath);
-            if (parentNode == null)
-            {
-                string parentName = System.IO.Path.GetFileName(parentPath);
-                parentNode = nodes.Add(parentName);
-            }
+            TreeNode newNode;
 
-            var newNode = parentNode.Nodes.Add(templateName);
+            string templateName = System.IO.Path.GetFileName(path);
+            string ? parentPath = System.IO.Path.GetDirectoryName(path);
+            if (string.IsNullOrEmpty( parentPath))
+            {
+                newNode = nodes.Add(templateName);
+            }
+            else
+            {
+                TreeNode? parentNode = nodes.FindNode(parentPath);
+                if (parentNode == null)
+                {
+                    string parentName = System.IO.Path.GetFileName(parentPath);
+                    parentNode = nodes.Add(parentName);
+                }
+                newNode = parentNode.Nodes.Add(templateName);
+            }
 
             return newNode;
         }
